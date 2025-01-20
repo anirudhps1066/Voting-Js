@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>VOTING</title>
+    <link rel="shortcut icon" href="https://static.mygov.in/media/self4society/2019/03/mygov-10000000001971606353.jpg" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h2 class="text-primary mt-5 text-center">CHECK VOTING ELIGIBILITY</h2>
+                <form CLASS="border border-primary mt-5 p-3 rounded">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Enter Your Age:</label>
+                      <input type="number" class="form-control" id="userage" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">Please enter your current age in the box above. Ensure the value is accurate as eligibility is determined based on age</div>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="checkeligibility()">CHECK ELIGIBILITY</button>
+                  </form>
+                  <h4 id="response"
+                  class="mt-5"></h4>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+    <script>
+         function checkeligibility(){
+            const userAge=userage.value;
+            var responselement=document.querySelector("#response");
+            if(userAge>=18){
+                responselement.innerHTML="You're Eligible for Voting."
+                responselement.style.color="green";
+            }
+            else if(userAge==0){
+                responselement.innerHTML="Please Enter Your Age."
+                responselement.style.color="red";
+            }
+            else{
+                responselement.innerHTML="You're NOT Eligible for Voting."
+                responselement.style.color="red";
+            }
+        }
+    </script>
+</body>
+</html>
